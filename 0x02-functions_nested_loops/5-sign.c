@@ -1,28 +1,39 @@
 #include "main.h"
-
 /**
- * print_sign - Prints the sign of a number.
- * @n: The number of which the sign will be printed.
+ * more_numbers - prints 10 times the numbers, from 0 to 14
  *
- * Return: 1 if the number is greater than zero,
- *	   0 if the number is zero,
- *	   -1 if the number is less than zero.
+ * Return: Always 0.
  */
-int print_sign(int n)
+
+void more_numbers(void)
 {
-if (n > 0)
+int i;
+int first_number;
+int second_number;
+int result;
+
+i = 0;
+result = 0;
+while (i < 10)
 {
-_putchar('+');
-return (1);
-}
-else if (n == 0)
+while (result <= 14)
 {
-_putchar('0');
-return (0);
+if (result < 10)
+{
+second_number = result;
 }
 else
 {
-_putchar('-');
-return (-1);
+first_number = result / 10;
+second_number = result % 10;
+_putchar (first_number + '0');
 }
+
+_putchar (second_number + '0');
+
+result++;
+}
+i++;
+result = 0;
+_putchar ('\n');
 }
